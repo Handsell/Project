@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./loginstyle.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Login</title>
+    <title>Sign In</title>
 </head>
 <body>
     <div class="overlay">
@@ -16,7 +16,7 @@
            <div class="con">
            <!--     Start  header Content  -->
            <header class="head-form">
-              <h2>Log In</h2>
+              <h2>Login In</h2>
               <!--     A welcome message or an explanation of the login form -->
               <p>login here using your username and password</p>
            </header>
@@ -50,27 +50,19 @@
               <br>
         <!--        buttons -->
         <!--      button LogIn -->
-              <button class="log-in"> Log In </button>
-           </div>
-          
+              <button class="log-in"> Sign In </button>
+           </div>         
         <!--   other buttons -->
            <div class="other">
-        <!--      Forgot Password button-->
-              <button class="btn submits frgt-pass">Forgot Password</button>
         <!--     Sign Up button -->
-              <button class="btn submits sign-up">Sign Up 
+              <button type="button" onclick="location.href='./register.html';" class="btn submits sign-up">Sign Up
         <!--         Sign Up font icon -->
               <i class="fa fa-user-plus" aria-hidden="true"></i>
               </button>
         <!--      End Other the Division -->
-           </div>
-             
-        <!--   End Conrainer  -->
-          </div>
-          
-          <!-- End Form -->
-        </form>
-        </div>
-        <script src="./login.js"></script>
+            </div>
+         </form>
+      </div>
+      <script src="./login.js"></script>
 </body>
 </html>
