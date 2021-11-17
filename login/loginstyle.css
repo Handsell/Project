@@ -12,15 +12,15 @@
 /* Start body rules */
 body {
     background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-background-image: linear-gradient(to top, #a8edea 0%, #c8d6e5 100%);
-background-attachment: fixed;
-  background-repeat: no-repeat;
+    background-image: linear-gradient(to top, #a8edea 0%, #c8d6e5 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
     font-family: 'Vibur', cursive;
 /*   the main font */
     font-family: 'Abel', sans-serif;
-opacity: .95;
-/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+    opacity: .95;
+    background-image: linear-gradient(to top, #cab1ca 0%, #97d9e1 100%);
 }
 
 
@@ -153,10 +153,14 @@ button {
 }
 /* Submits */
 .submits {
-    width: 48%;
+    width: 100%;
     display: inline-block;
-    float: left;
-    margin-left: 2%;
+    margin-left: 73%;
+}
+
+.other a{
+    text-decoration: none;
+    color: #252537;
 }
 
 /*       Forgot Password button FAF3DD  */
