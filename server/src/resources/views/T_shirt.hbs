@@ -1,0 +1,17 @@
+<div id="content">
+            <div class="content__move">
+                <div class="button " >
+                    <a class="content__home" href="/">
+                        <i class="ti-home"></i>
+                    </a>
+                    <b>   /   T-Shirt</b>
+                </div>
+            </div>
+            <div class="content__list">
+                {{#each t_shirts}}
+                <div class="content__Tshirt">
+                    <a href="/T_shirt/{{this.slug}}"><img src="{{this.img}}" alt=""></a>     
+                </div>
+                {{/each}}
+            </div>         
+</div>
