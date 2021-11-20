@@ -15,8 +15,8 @@ class T_shirtController {
     show(req,res,next){
         T_shirt.findOne({slug: req.params.slug})
             .then(t_shirts=>{
-                res.render('products/show', { t_shirts: mongooseToObject(t_shirts) })
-                // res.json(bags)
+    //             res.render('products/show', { t_shirts: mongooseToObject(t_shirts) })
+                res.json(t_shirts)
             })
             .catch(err=>next(err));
     }
