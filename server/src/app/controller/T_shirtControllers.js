@@ -1,5 +1,6 @@
 const T_shirt = require('../models/T_shirt');
 const {mongooseToObject} = require('../../util/mongoose');
+
 class T_shirtController {
     
     // [get] /T_shirt
@@ -20,7 +21,9 @@ class T_shirtController {
             })
             .catch(err=>next(err));
     }
+    
+    
+};
 
-}
 
 module.exports = new T_shirtController;
