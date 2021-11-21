@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const T_shirtController = require('../app/controller/T_shirtControllers');
-const {createT_shirt, update} = require('../app/controller/productControllers');
+
 
 
 router.post("/create",T_shirtController.create);
