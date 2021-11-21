@@ -21,8 +21,14 @@ class T_shirtController {
             })
             .catch(err=>next(err));
     }
-    
-    
+    show_id(req,res,next){
+        T_shirt.findOne({id: req.params.id})
+            .then(t_shirts=>{
+    //             res.render('products/show', { t_shirts: mongooseToObject(t_shirts) })
+                res.json(t_shirts)
+            })
+            .catch(err=>next(err));
+    }  
 };
 
 

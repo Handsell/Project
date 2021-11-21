@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const app = express();
 const port = 4000;
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const route =require('./routes');
 const db = require('./config/db');
@@ -17,6 +19,10 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(cors());
+
 
 app.use(morgan('combined'));
 
