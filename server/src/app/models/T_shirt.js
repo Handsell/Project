@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const T_shirt = new Schema({
-    _id: Object,
-    image: String,
+    // _id: Object,
+    img: String,
     slug: String,
     Name: String,
     Price: String,

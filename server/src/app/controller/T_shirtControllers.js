@@ -45,6 +45,29 @@ class T_shirtController {
             res.status(200).json({ message: "Update successful!" });
           })
     }
+    delete(req, res,next){
+      
+        return T_shirt.deleteOne(
+            { id: req.params.id },  // <-- find stage
+            { $set: {                // <-- set stage
+               id: req.body.id,     // <-- id not _id
+               img: req.body.img,
+               slug: req.body.slug,
+               Name: req.body.Name,
+               Price: req.body.Price
+              } 
+            }   
+          ).then(result => {
+            res.status(200).json({ message: "Delete successful!" });
+          })
+    }
+    create(req, res, next){
+        const t_shirt= new T_shirt(req.body);
+        t_shirt.save()
+        .then(result => {
+            res.json({ message: "Create successful!" });
+        })
+    }
 }
 
 module.exports = new T_shirtController;
