@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Footer_About(){
+export default function About(){
     return(
         <div className="footer__about">
             <div className="about__title">

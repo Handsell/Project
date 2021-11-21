@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 // ------------------------GET Requests------------------------------------
-export default class PersonList extends React.Component {
+export default class Productlist extends React.Component {
   state = {
     persons: [],
   };

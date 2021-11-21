@@ -3,7 +3,7 @@ import '../../assets/css/T_shirt.css'
 import '../../assets/css/image.css'
 // import '../../assets/css/search'
 
-export default function top(){
+export default function TOP(){
     return(
         <div className="top">
             <div id="header">

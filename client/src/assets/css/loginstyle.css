@@ -10,10 +10,8 @@
 /* End Global rules */
 
 /* Start body rules */
-body {
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-    background-image: linear-gradient(to top, #a8edea 0%, #c8d6e5 100%);
-    background-attachment: fixed;
+.overlay {
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
 
     font-family: 'Vibur', cursive;
@@ -28,7 +26,7 @@ body {
 /* End body rules */
 
 /* Start form  attributes */
-form {
+.form_sign_up {
     width: 450px;
     min-height: 500px;
     height: auto;

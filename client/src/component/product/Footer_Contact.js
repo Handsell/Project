@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Footer_Contact(){
+export default function Contact(){
     return(
         <div className="footer__contact">
             <div className="contact__title">

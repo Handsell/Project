@@ -1,5 +1,5 @@
 import React from 'react'
-// import '../../assets/css/search'
+import '../../assets/css/loginstyle.css'   
 
 export default function Login(){
         return (
@@ -19,7 +19,7 @@ export default function Login(){
 					   <i className="fa fa-user-circle"></i>
 					 </span>
 					{/* <!--   user name Input--> */}
-					 <input className="form-input" id="txt-input" type="text" placeholder="@UserName" required/>
+					 <input className="form-input" id="txt-input" type="textt" placeholder="@UserName" required/>
 				 
 				  <br/>
 				 
@@ -29,7 +29,7 @@ export default function Login(){
 					<i className="fa fa-key"></i>
 				   </span>
 				  {/* <!--   Password Input--> */}
-				  <input className="form-input" type="password" placeholder="Password" id="pwd"  name="password" required/>
+				  <input className="form-input" type="passwordd" placeholder="Password" id="pwd"  name="password" required/>
 				 
 			{/* <!--      Show/hide password  --> */}
 				 <span>
