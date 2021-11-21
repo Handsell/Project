@@ -15,17 +15,14 @@ module.exports={
                 } catch (err) { 
                     res.status(500).json({ mess: err.message }); 
                 }    
-    },
-    update:async function (req, res, next){
-        try{
-            const id = req.params.id;
-            const updates =req.body;
-            const options = {new:true};
-            const result = await T_shirt.findByIdAndUpdate(id, updates);
-            res.send(result);
-        }catch(err){
-            console.log(err);
-        }
-        // res.send('hello');
-    },  
+    }, 
+    // update:async function (req, res){
+    //     try{
+    //         const result = await T_shirt.findByIdAndUpdate(req.params.id, {$set:req.body}, {new:true});
+    //         res.status(200).json(result);
+    //     }catch(err){
+    //         console.log(err);
+    //     }
+    //     // res.send('hello');
+    // },  
 }

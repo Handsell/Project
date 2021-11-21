@@ -28,8 +28,23 @@ class T_shirtController {
                 res.json(t_shirts)
             })
             .catch(err=>next(err));
-    }  
-};
-
+    } 
+    update(req, res,next){
+      
+        return T_shirt.updateOne(
+            { id: req.params.id },  // <-- find stage
+            { $set: {                // <-- set stage
+               id: req.body.id,     // <-- id not _id
+               img: req.body.img,
+               slug: req.body.slug,
+               Name: req.body.Name,
+               Price: req.body.Price
+              } 
+            }   
+          ).then(result => {
+            res.status(200).json({ message: "Update successful!" });
+          })
+    }
+}
 
 module.exports = new T_shirtController;
