@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react"
+import '../../assets/css/T_shirt.css'
+import '../../assets/css/image.css'
+// import '../../assets/css/search'
 
-export default function top() {
-    return (
-        <div class="top">
+export default function top(){
+    return(
+        <div className="top">
             <div id="header">
                 {/* <!-- Begin: Nav --> */}
                 <ul id="header__nav">
@@ -11,24 +14,25 @@ export default function top() {
                 </ul>
                 {/* <!-- End: Nav --> */}
                 {/* <!-- Begin: Button --> */}
-                <div class="button__icon--small">
-                    <div class="shopping-button">
-                        <a href="./manage.html"><i class="fas fa-cart-arrow-down"></i></a>
+                <div className="button__icon--small">
+                    <div className="shopping-button">
+                        <a href="./manage.html"><i className="fas fa-cart-arrow-down"></i></a>
                     </div>
-                    <div class="search">
-                        <div class="icon"></div>
-                        <div class="input">
+                    <div className="search">
+                        <div className="icon"></div>
+                        <div className="input">
                             <input type="text" placeholder="Seach" id="mysearch"/>
                         </div>
-                        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>  
-                    </div> 
-                    <div class="user-button js-login">
-                        <a href="./login/login.html"><i class="fas fa-user"></i></a>
+                        <span className="clear" onclick="document.getElementById('mysearch').value = ''"></span>  
+                    </div>             
+                    
+                    <div className="user-button js-login">
+                        <a href="./login/login.html"><i className="fas fa-user"></i></a>
                     </div>
                 </div>
                 {/* <!-- End: Button --> */}
+    
             </div>
-        </div>
-        
+        </div> 
     )
 }
