@@ -17,7 +17,7 @@ export default function Main() {
                 <div className="infoproduct">
                     <h4>Áo Thun Cổ Tròn Linh Vật Bbuff Ver1</h4>
                     <div className="head">
-                        <p>Chất liệu: <a href="../../Img/BANNER.jpg" id="clieu">Cotton Compact 4S</a></p>
+                        <p>Chất liệu: <a href="#" id="clieu">Cotton Compact 4S</a></p>
                         <p>Mã số: 0020285</p>
                     </div>
                     <p id="money">225,000 đ</p>
@@ -33,7 +33,7 @@ export default function Main() {
                                         <a href="#">
                                         <li>
                                             <ion-icon name="add-circle"></ion-icon>
-                                            <span>Thêm Đen Cam, S vào giỏ hàng</span>                          
+                                            {/* <span>Thêm Đen Cam, S vào giỏ hàng</span>                           */}
                                         </li>
                                         <span>Chọn mua</span>
                                     </a>

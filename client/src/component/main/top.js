@@ -1,14 +1,14 @@
 import React from "react"
 
 
-export default function top(){
+export default function Top(){
     return(
         <div className="top">
                 <div id="header">
                     {/* <!-- Begin: Nav --> */}
                     <ul id="header__nav">
                         <li><a href="/">HOME</a></li>
-                        <li><a href="/111">PRODUCT</a></li>
+                        <li><a href="/Product">PRODUCT</a></li>
                     </ul>
                     {/* <!-- End: Nav --> */}
                     {/* <!-- Begin: Button --> */}
@@ -25,7 +25,7 @@ export default function top(){
                         </div>             
                         
                         <div className="user-button js-login">
-                            <a href="./login/login.html"><i className="fas fa-user"></i></a>
+                            <a href="/Login"><i className="fas fa-user"></i></a>
                         </div>
                     </div>
                     {/* <!-- End: Button --> */}

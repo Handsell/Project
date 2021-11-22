@@ -1,9 +1,9 @@
-import Banner from "../component/main/Banner";
-import Banner2 from "../component/main/Banner2";
-import Content_title from "../component/main/Content_title";
-import Top from "../component/main/top";
-import PersonList from "../component/main/Content-list";
-import Footer from "../component/main/Footer"
+import Banner from "../../component/main/Banner";
+import Banner2 from "../../component/main/Banner2";
+import Content_title from "../../component/main/Content_title";
+import Top from "../../component/main/top";
+import PersonList from "../../component/main/Content-list";
+import Footer from "../../component/main/Footer"
 
 function Home()
 {

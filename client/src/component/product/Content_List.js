@@ -26,7 +26,7 @@ export default class Productlist extends React.Component {
           {this.state.persons.map((post) => (
             // <div style={{display:'grid', gridTemplateRows:'1fr 1fr',width:'100%'}}>
             <div className="content__Tshirt">
-              <a href="./decription/T-shirt/T_shirt1.html">
+              <a href="/Decription">
                 <img src="Img/t-shirt/Áo Thun Cổ Tròn Linh Vật Bbuff Ver1 .jpg" alt="Áo Thun Cổ Tròn Linh Vật Bbuff Ver1" />
                 <div key={post.id}>
                   <h3>{post.name}</h3>
