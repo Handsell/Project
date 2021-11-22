@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
- * {box-sizing: border-box}
+ /* * {box-sizing: border-box} */
  body{
    font-family: 'Noto Sans JP', sans-serif;
    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
  }
- form{
+ .form_signup{
     width: 900px !important;
     margin: auto;
     box-shadow: 0 9px 50px hsl(0deg 0% 0% / 31%);

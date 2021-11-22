@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+}
+
+.fullbody{
+    font-family: 'Roboto', sans-serif;
+    font-size:62.5%;
+    
+}
+#main{
+ overflow: hidden;
+
+}
+
+.top{
+    position:fixed;
+    width: 100%;
+}
+#header{
+    height: 60px;
+    background-color: #000;
+    display: flex !important;
+    justify-content: space-between !important;
+    box-sizing: border-box ;
+}
+
+#header__nav {
+    display: inline-block;
+    font-size: 16px;
+  
+}
+
+#header__nav li {
+    display: inline-block;
+    
+}
+
+#header__nav li a{
+    color: #fff;
+    text-decoration: none;
+    line-height:60px;
+    padding: 0 40px;
+    display: inline-block;
+}
+
+#header .button__icon--small{
+    background-color: #000;
+    height: 60px;
+    float: right;
+    padding-right: 30px;
+}
+
+#header .shopping-button{
+    float: right;
+    padding:0 21px;
+    cursor: pointer;
+    position: relative;
+}
+
+#header .search{
+    float: right;
+    padding:0 21px;
+}
+
+
+#header .user-button{
+    float: right;
+    padding:0 21px;
+    cursor: pointer;
+}
+
+#header .fas{
+    font-size: 20px;
+    color: #fff;
+    line-height: 60px;
+}
+
+.container_home{
+    max-width: 1400px !important;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+#content{
+    width: 1400px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+}
+
+#content .content__title{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #fff;
+    height: 100px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-family: 'Roboto', "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#content .content__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.content__list .content__Tshirt img{
+    width: 344px;
+    margin: 10px 2px;
+}
+
+/* css T-shirt */
+.content__move{
+    height: 40px;
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 0;
+    padding-left: 16px;
+    margin-bottom: 0.5rem;
+    list-style: none;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* css T-shirt */
+#content .content__home{
+    font-size: 16px;
+    color: #444444;
+    text-decoration: none;
+    line-height: 40px;
+}
+/* css T-shirt */
+.button b{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Roboto';
+}
+/* css T-shirt */
+.add-product .fas{
+    font-size: 16px;
+    line-height: 40px;
+    color: #444444;
+    padding-right: 20px;
+}
+
+#footer__home{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #000;
+    
+}
+
+#footer__home .footer__logo{
+    margin: auto;
+    
+}
+
+#footer__home .footer__about{
+    color: #fff;  
+    font-size: 13px;
+    margin-bottom: 10px;  
+}
+
+#footer__home .about__title {
+    margin: 10px 0;
+    font-size: 16px; 
+       
+}
+
+#footer__home .footer__contact{
+    color: #fff; 
+    font-size: 16px;
+    margin: 10px 30px;
+}
+#footer__home .contact__title{
+    margin-bottom: 10px;
+}
+#footer__home .contact__title h4{
+    font-weight: 100px;
+}
+
+#footer__home .contact__list a{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 5px;
+    
+}
+

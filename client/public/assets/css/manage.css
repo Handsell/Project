@@ -1,7 +1,19 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
     box-sizing: inherit;
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:737px;
+    /* background-color: rgb(169, 238, 232); */
+}
+.container-manage{
+    width: 1200px;
+    height: 400px;
 }
 .top{
     position:fixed;
@@ -36,6 +48,12 @@
     cursor: pointer;
 }
 
+#header .ti-search {
+    color: #fff;
+    font-size: 16px;
+    line-height: 60px;
+    
+}
 
 #header .user-button{
     float: right;
@@ -43,7 +61,7 @@
     cursor: pointer;
 }
 
-#header .fas{
+#header .ti-user{
     font-size: 16px;
     color: #fff;
     line-height: 60px;
@@ -55,6 +73,13 @@
     cursor: pointer;
     position: relative;
 }
+#header .ti-shopping-cart{
+    font-size: 16px;
+    color: #fff;
+    line-height: 60px;
+    
+}
+
 
 #header__nav li a{
     color: #fff;
@@ -70,80 +95,18 @@
     float: right;
     padding-right: 30px;
 }
-.container {
-    display: grid;
-    grid-template-rows: 1fr .5fr;
-    width: 800px;
-    margin: auto;
+.container{
+    max-width: 1400px !important;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
-.container-insert{
-    margin-top: 60px;
-    width: 800px;
-    padding-top: 20px;
-}
-.container-insert .form-name{
-    font-size:20px;
-}
-.input-group{
-    margin-top: 10px;
-}
-.input-group input {
-    overflow: visible;
-    width: 800px;
-    height: 46px;
-    font-size: 18px;
-}
-
-.button-create{
-    position: relative;
-    left: 458px;
-}
-.btn{
-    /* margin-top: 20px;
-    margin-right: 10px;
-    background-color: rgb(125, 186, 243);
-    justify-content: end;
-     */
-     display: inline-block;
-    color: #252537;
-  
-    width: 164px;
-    height: 36px;
-  
-    padding: 0 20px;
-    background: #B8F2E6;
-    border-radius: 5px;
-    
-    outline: none;
-    border: none;
-  
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-    
-    margin: 7% auto;
-    letter-spacing: 0.05em;
-}
-button:hover {
-    transform: translatey(3px);
-    box-shadow: none;
-}
-button {
-    font-size:18px;
-    
-}
-
 #footer{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: #000;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-
+    
 }
 
 .footer__logo{
@@ -191,7 +154,6 @@ button {
 .contact__title{
     margin-bottom: 10px;
 }
-
 .contact__list a{
     color: #fff;
     text-decoration: none;

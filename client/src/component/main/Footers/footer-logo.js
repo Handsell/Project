@@ -1,9 +1,9 @@
 import React from "react"
-
-export default function Logo(){
+// import logo from '../../../Img/logo/logo.png'
+export default function Footer_logo(){
     return(
-        <div class="footer__logo">
-            <div class="footer__logo-top">
+        <div className="footer__logo">
+            <div className="footer__logo-top">
                 <a href="">
                     <img src="Img/logo/logo.png" alt=""/>
                 </a>

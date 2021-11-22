@@ -1,6 +1,6 @@
 import React from "react"
-import '../../assets/css/T_shirt.css'
-import '../../assets/css/image.css'
+// import '../../assets/css/T_shirt.css'
+// import '../../assets/css/image.css'
 // import '../../assets/css/search'
 
 export default function TOP(){
@@ -9,8 +9,8 @@ export default function TOP(){
             <div id="header">
                 {/* <!-- Begin: Nav --> */}
                 <ul id="header__nav">
-                    <li><a href="./index.html">HOME</a></li>
-                    <li><a href="./T_shirt.html">PRODUCT</a></li>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/111">PRODUCT</a></li>
                 </ul>
                 {/* <!-- End: Nav --> */}
                 {/* <!-- Begin: Button --> */}

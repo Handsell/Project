@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
-*{
-    margin: 0;
+/* *{
     padding: 0;
-    box-sizing: border-box;
-}
+    margin: 0;
+    box-sizing: inherit;
+} */
 .top{
     position:fixed;
     width: 100%;
@@ -32,9 +30,10 @@
     font-size: 16px;
 }
 
-#header .search{
+#header .search-button{
     float: right;
     padding:0 21px;
+    cursor: pointer;
 }
 
 
@@ -45,7 +44,7 @@
 }
 
 #header .fas{
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     line-height: 60px;
 }
@@ -56,7 +55,6 @@
     cursor: pointer;
     position: relative;
 }
-
 
 #header__nav li a{
     color: #fff;
@@ -72,79 +70,67 @@
     float: right;
     padding-right: 30px;
 }
-
-.container{
-    max-width: 1400px !important;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
-#content{
-    width: 1400px !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin:auto;
-}
-
-#content .content__list{
-    
+.container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    
+    grid-template-rows: 1fr .5fr;
+    width: 800px;
+    margin: auto;
 }
-
-
-
-.content__list .content__Tshirt img{
-    width: 344px;
-    margin: 10px 2px;
-}
-
-
-#content .content__title{
-    margin-top: 10px;
-    width: 100%;
-    background-color: #fff;
-    height: 100px;
-    text-align: center;
-    font-size: 1.7rem;
-    font-family: 'Roboto', "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.content__move{
-    height: 40px;
-    width: 100%;
-    background-color: #e9ecef;
-    border-radius: 0;
-    padding-left: 16px;
-    margin-bottom: 0.5rem;
-    list-style: none;
+.container-insert{
     margin-top: 60px;
-    display: flex;
-    justify-content: space-between;
-
+    width: 800px;
+    padding-top: 20px;
+}
+.container-insert .form-name{
+    font-size:20px;
+}
+.input-group{
+    margin-top: 10px;
+}
+.input-group input {
+    overflow: visible;
+    width: 800px;
+    height: 46px;
+    font-size: 18px;
 }
 
-
-#content .content__home{
-    font-size: 16px;
-    color: #444444;
-    text-decoration: none;
-    line-height: 40px;
+.button-create{
+    position: relative;
+    left: 458px;
 }
-
-.button b{
-    font-size: 20px;
-    font-weight: 300;
-    font-family: 'Roboto';
+.btn{
+    /* margin-top: 20px;
+    margin-right: 10px;
+    background-color: rgb(125, 186, 243);
+    justify-content: end;
+     */
+     display: inline-block;
+    color: #252537;
+  
+    width: 164px;
+    height: 36px;
+  
+    padding: 0 20px;
+    background: #B8F2E6;
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 7% auto;
+    letter-spacing: 0.05em;
 }
-
-.add-product .fas{
-    font-size: 16px;
-    line-height: 40px;
-    color: #444444;
-    padding-right: 20px;
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+button {
+    font-size:18px;
+    
 }
 
 #footer{
@@ -152,7 +138,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: #000;
-    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
 }
 
 .footer__logo{
@@ -200,6 +191,7 @@
 .contact__title{
     margin-bottom: 10px;
 }
+
 .contact__list a{
     color: #fff;
     text-decoration: none;
@@ -208,7 +200,3 @@
     margin-bottom: 5px;
     
 }
-.contact__list a:hover{
-    color: #97d9e1;
-}
-
