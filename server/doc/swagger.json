@@ -1,0 +1,143 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0.0",
+    "title" : "Swagger Petstore",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "email" : "apiteam@swagger.io"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/API637/Fashion-Web/1.0.0"
+  }, {
+    "url" : "https://petstore.swagger.io/v2"
+  } ],
+  "tags" : [ {
+    "name" : "pet",
+    "description" : "Everything about your Pets",
+    "externalDocs" : {
+      "description" : "Find out more",
+      "url" : "http://swagger.io"
+    }
+  }, {
+    "name" : "store",
+    "description" : "Access to Petstore orders"
+  }, {
+    "name" : "user",
+    "description" : "Operations about user",
+    "externalDocs" : {
+      "description" : "Find out more about our store",
+      "url" : "http://swagger.io"
+    }
+  } ],
+  "paths" : {
+    "/T_shirt" : {
+      "get" : {
+        "tags" : [ "get products" ],
+        "summary" : "Add a T_shirt to the Product",
+        "operationId" : "addT_shirt",
+        "responses" : {
+          "200" : {
+            "description" : "Ok"
+          }
+        }
+      }
+    },
+    "/T_shirt/create" : {
+      "post" : {
+        "tags" : [ "Create Product" ],
+        "summary" : "Create T_shirt",
+        "responses" : {
+          "200" : {
+            "description" : "Create successful!"
+          }
+        }
+      }
+    },
+    "/T_shirt/id" : {
+      "get" : {
+        "tags" : [ "Product" ],
+        "summary" : "Display Product by id",
+        "operationId" : "findProductbyId",
+        "responses" : {
+          "200" : {
+            "description" : "successful"
+          },
+          "400" : {
+            "description" : "Invalid tag value"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Product" ],
+        "summary" : "Updates a product on the web with form data",
+        "operationId" : "updateProductWithForm",
+        "responses" : {
+          "200" : {
+            "description" : "Successful"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Product" ],
+        "summary" : "Deletes a product",
+        "operationId" : "deleteT_shirt",
+        "responses" : {
+          "200" : {
+            "description" : "Successful"
+          }
+        }
+      }
+    },
+    "/T_shirt/slug" : {
+      "get" : {
+        "tags" : [ "Product" ],
+        "summary" : "Returns product by slug in database",
+        "operationId" : "getInventory",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/login" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "login with user",
+        "operationId" : "Login",
+        "responses" : {
+          "400" : {
+            "description" : "Username or password must be not empty!"
+          },
+          "401" : {
+            "description" : "Username and password wrong."
+          },
+          "200" : {
+            "description" : "Login Success"
+          }
+        }
+      }
+    },
+    "/login/user" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Create user",
+        "description" : "This can only be done by the logged in user.",
+        "operationId" : "createUser",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    }
+  }
+}

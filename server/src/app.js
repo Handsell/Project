@@ -6,7 +6,7 @@ const app = express();
 const port = 4000;
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const swaggerUi = require('swagger-ui-express');
 const route =require('./routes');
 const db = require('./config/db');
 
@@ -22,6 +22,9 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
+
+const docs = require('../doc/swagger.json');
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(docs));
 
 
 app.use(morgan('combined'));
