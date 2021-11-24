@@ -75,7 +75,7 @@ body{
     cursor: pointer;
 }
 
-#header .fas{
+.button__icon--small .fas{
     font-size: 20px;
     color: #fff;
     line-height: 60px;
@@ -101,8 +101,11 @@ body{
     background-color: #fff;
     height: 100px;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-family: 'Roboto', "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+#content p{
+    margin: 0;
 }
 
 #content .content__list{
@@ -197,3 +200,33 @@ body{
     
 }
 
+/* css manage */
+.container_manage {
+    margin-top: 70px;
+    height: 62vh;
+    /* background-color: rgb(169, 238, 232); */
+}
+.con_manage{
+    width: 100%;
+    height: 100%;
+}
+
+.con_manage h2{
+    font-size: 30px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    width: 300px;
+    position: relative;
+    left: 640px;
+}
+#Add{
+    position: relative;
+    top: 32px;
+    left: 95%;
+    font-size: 20px;
+    color: #fff;
+}
+
+#Add:hover{
+    color: aquamarine;
+}

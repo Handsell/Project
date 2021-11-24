@@ -4,7 +4,7 @@ import Content_Move from "../../component/product/Content_Move";
 import Productlist from "../../component/product/Content_List";
 
 
-export default function Product() {
+export default function ProductAdmin() {
     return (
     <div id="main">
         <Top/>

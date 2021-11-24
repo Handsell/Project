@@ -1,26 +1,13 @@
 import React from 'react';
-
 import axios from 'axios';
 
-export default class PersonList extends React.Component {
-  state = {
-    persons: []
-  }
-
-  componentDidMount() {
-    axios.get('https://ass4singment.herokuapp.com/products')
+function Loginad  (username,password) {
+  axios.get('https://localhost:4000/login', { username, password })
       .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
+        console.log(res);
+        console.log(res.data);
       })
-      .catch(error => console.log(error));
-  }
-
-  render() {
-    return (
-      <ul>
-        { this.state.persons.map(person => <li>{person.price}</li>)}
-      </ul>
-    )
-  }
 }
+
+
+export default Loginad;
