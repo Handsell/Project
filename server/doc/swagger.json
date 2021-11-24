@@ -17,7 +17,7 @@
     "description" : "SwaggerHub API Auto Mocking",
     "url" : "https://virtserver.swaggerhub.com/API637/Fashion-Web/1.0.0"
   }, {
-    "url" : "https://petstore.swagger.io/v2"
+    "url" : "https://fashionwebab.herokuapp.com"
   } ],
   "tags" : [ {
     "name" : "pet",
