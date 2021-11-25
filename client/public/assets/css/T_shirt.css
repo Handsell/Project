@@ -111,6 +111,7 @@ body{
 #content .content__list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    
 }
 
 .content__list .content__Tshirt img{

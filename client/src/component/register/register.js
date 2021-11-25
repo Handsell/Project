@@ -1,7 +1,7 @@
 import React from 'react'
-
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+
 
 
 
@@ -34,9 +34,15 @@ class RegisterPage extends React.Component {
         this.setState({ submitted: true });
         const { username, password } = this.state;
         if (username && password) {
-            this.props.login(username, password);
-        }
+            axios.post('https://fashionwebab.herokuapp.com/login/user', { username, password })
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+                
+            })
     }
+}
+
 
     render() {
         const { loggingIn } = this.props;

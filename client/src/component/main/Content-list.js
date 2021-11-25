@@ -12,7 +12,7 @@ export default class PersonList extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://ass4singment.herokuapp.com/products")
+      .get("https://fashionwebab.herokuapp.com/T_shirt")
       .then((res) => {
         const persons = res.data;
         this.setState({ persons });
@@ -27,12 +27,12 @@ export default class PersonList extends React.Component {
             // <div style={{display:'grid', gridTemplateRows:'1fr 1fr',width:'100%'}}>
             <div className="content__Tshirt">
               <a href="/Decription">
-                <img src="Img/t-shirt/Áo Thun Cổ Tròn Linh Vật Bbuff Ver1 .jpg" alt="Áo Thun Cổ Tròn Linh Vật Bbuff Ver1" />
-                <div key={post.id}>
-                  <h3>{post.name}</h3>
+                {/* <img src="Img/t-shirt/Áo Thun Cổ Tròn Linh Vật Bbuff Ver1 .jpg" alt="Áo Thun Cổ Tròn Linh Vật Bbuff Ver1" /> */}
+                {/* <div key={post.id}> */}
+                  <img src={post.img}></img>
                   {/* <p>{post.type}</p> */}
-                  <img src={post.type}></img>
-                </div>
+                  
+                {/* </div> */}
               </a>
             </div>
 

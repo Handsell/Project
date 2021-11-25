@@ -37,14 +37,15 @@ class LoginPage extends React.Component {
         this.setState({ submitted: true });
         const { username, password } = this.state;
         if (username && password) {
-            axios.get('https://fashionwebab.herokuapp.com/login', { username, password })
+            axios.post('https://fashionwebab.herokuapp.com/login', { username, password })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-                this.props.Loginad(username, password);
+                window.location.href = "/ManageProduct";
       })
         }
-        console.log(username, password)
+        
+        console.log(username, password);
     }
 
     render() {
@@ -73,6 +74,7 @@ class LoginPage extends React.Component {
                                 }
                             </div>
                             <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
+                                <i className="fa fa-key"></i>
                                 <label htmlFor="password">Password</label>
                                 <input type="password" className="form-control" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
                                 {submitted && !password &&
@@ -136,7 +138,7 @@ export default LoginPage;
 // 							{/* <!--   Password --> */}
 						
 // 						<span className="input-item">
-// 							<i className="fa fa-key"></i>
+// 							
 // 						</span>
 // 						{/* <!--   Password Input--> */}
 // 						<input className="form-input" type="password" placeholder="Password" id="pwd"  name="password" required/>						
