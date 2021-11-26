@@ -1,0 +1,49 @@
+.main_mana{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    
+}
+
+
+.container_manage {
+    /* margin-top: 10px; */
+    /* background-color: rgb(169, 238, 232); */
+    /* overflow: hidden; */
+}
+.con_manage{
+    
+    width: 100%;
+    height: 100%;
+}
+
+.table-striped th{
+    width: 2%;
+}
+.con_manage h2{
+    margin-top: 100px;
+    font-size: 30px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    width: 300px;
+    position: relative;
+    left: 640px;
+}
+#Add{
+    position: relative;
+    top: 32px;
+    left: 95%;
+    font-size: 20px;
+    color: #fff;
+}
+
+#Add:hover{
+    color: aquamarine;
+}
+
+button[class="manage_delete"] {
+    width: 100px;
+    margin-right: 4px;
+}
+button[class="manage_update"] {
+    width: 100px;
+}

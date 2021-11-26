@@ -17,6 +17,12 @@ body{
  overflow: hidden;
 
 }
+/* css of product */
+#main_product{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    overflow: hidden;
+}
 
 .top{
     position:fixed;
@@ -201,33 +207,3 @@ body{
     
 }
 
-/* css manage */
-.container_manage {
-    margin-top: 70px;
-    height: 62vh;
-    /* background-color: rgb(169, 238, 232); */
-}
-.con_manage{
-    width: 100%;
-    height: 100%;
-}
-
-.con_manage h2{
-    font-size: 30px;
-    font-family: 'Roboto';
-    font-weight: 300;
-    width: 300px;
-    position: relative;
-    left: 640px;
-}
-#Add{
-    position: relative;
-    top: 32px;
-    left: 95%;
-    font-size: 20px;
-    color: #fff;
-}
-
-#Add:hover{
-    color: aquamarine;
-}

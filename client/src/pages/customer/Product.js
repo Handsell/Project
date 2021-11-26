@@ -6,7 +6,7 @@ import Productlist from "../../component/product/Content_List";
 
 export default function Product() {
     return (
-    <div id="main">
+    <div id="main_product">
         <Top/>
         <div id="content">
             <Content_Move/>

@@ -39,6 +39,7 @@ class InsertProductPage extends React.Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+                window.location.reload();
                 
             })
     }
@@ -79,8 +80,8 @@ class InsertProductPage extends React.Component {
                             </div>
                             <div className={'form-group' + (submitted && !img ? ' has-error' : '')}>
                                 <label htmlFor="img">Image</label>
-                                <input className="file-upload-input" type="file" value={img} onChange={this.handleChange} accept="Image/*"/>
-                                {/* <input type="img" className="form-control" name="img" value={img} onChange={this.handleChange} /> */}
+                                
+                                <input type="img" className="form-control" name="img" value={img} onChange={this.handleChange} />
                                 {submitted && !img &&
                                     <div className="help-block">Image is required</div>
                                 }

@@ -1,21 +1,7 @@
 
-
-
-import Banner from "./component/main/Banner";
-import Banner2 from "./component/main/Banner2";
-import PersonList from "./component/main/Content-list";
-import Content_title from "./component/main/Content_title";
-
-import Top from "./component/main/top"
-import Productlist from "./component/product/Content_List";
-import Content_Move from "./component/product/Content_Move";
-
-
-import Register from "./component/register/register";
-
 import {BrowserRouter} from "react-router-dom";
 import Router  from "./Router/router";
-import LoginAdmin from "./pages/admin/Login";
+
 
 
 
