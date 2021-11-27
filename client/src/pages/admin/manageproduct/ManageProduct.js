@@ -1,14 +1,12 @@
-import React from 'react'
-
-import Footer from '../../../component/main/Footer'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import TopProduct from './topprodcut'
-import './manageproduct.css'
+import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import TopProduct from './topprodcut';
+import './manageproduct.css';
 
 
 
-export default class PersonList extends React.Component {
+export default class ManageProduct extends React.Component {
   state = {
     slug: '',
     persons: [],
@@ -87,7 +85,7 @@ export default class PersonList extends React.Component {
                     </form>
                 </div>
             </div>
-            <Footer/>
+            
         </div>
     ) 
   }

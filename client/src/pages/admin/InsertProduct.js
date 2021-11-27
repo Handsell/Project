@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
+
 class InsertProductPage extends React.Component {
     constructor(props) {
         super(props);
@@ -56,24 +57,24 @@ class InsertProductPage extends React.Component {
                 <div className="container_insert">
                     <div className="con-insert">
                             <h1>CREATE NEW PRODUCT</h1>
-                        <form name="form" onSubmit={this.handleSubmit}>
+                        <form name="form-name" onSubmit={this.handleSubmit}>
                             <div className={'form-group' + (submitted && !Name ? ' has-error' : '')}>
                                 <label htmlFor="Name">Name</label>
-                                <input type="text" className="form-control" name="Name" value={Name} onChange={this.handleChange} />
+                                <input type="text" className="form-control insert_sp" name="Name" value={Name} onChange={this.handleChange} required autofocus />
                                 {submitted && !Name &&
                                     <div className="help-block">Name is required</div>
                                 }
                             </div>
                             <div className={'form-group' + (submitted && !slug ? ' has-error' : '')}>
                                 <label htmlFor="slug">Slug</label>
-                                <input type="slug" className="form-control" name="slug" value={slug} onChange={this.handleChange} />
+                                <input type="slug" className="form-control insert_sp" name="slug" value={slug} onChange={this.handleChange} required autofocus/>
                                 {submitted && !slug &&
                                     <div className="help-block">Slug is required</div>
                                 }
                             </div>
                             <div className={'form-group' + (submitted && !Price ? ' has-error' : '')}>
                                 <label htmlFor="Price">Price</label>
-                                <input type="Price" className="form-control" name="Price" value={Price} onChange={this.handleChange} />
+                                <input type="Price" className="form-control insert_sp" name="Price" value={Price} onChange={this.handleChange} required autofocus/>
                                 {submitted && !Price &&
                                     <div className="help-block">Price is required</div>
                                 }
@@ -81,23 +82,22 @@ class InsertProductPage extends React.Component {
                             <div className={'form-group' + (submitted && !img ? ' has-error' : '')}>
                                 <label htmlFor="img">Image</label>
                                 
-                                <input type="img" className="form-control" name="img" value={img} onChange={this.handleChange} />
+                                <input type="img" className="form-control insert_sp" name="img" value={img} onChange={this.handleChange} required autofocus/>
                                 {submitted && !img &&
                                     <div className="help-block">Image is required</div>
                                 }
                             </div>                            
-                            <div className="form-group orther_regist">
-                            <button type="submit" className="signupbtn">CONFIRM</button>
-                                {loggingIn &&
-                                    <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                                }
-                                
+                            <div className="form-group orther_regist cancleprudct">
+                                <button type="submit" className="insertbtn">CONFIRM</button>
+                                <Link to="/ManageProduct">
+                                <button className="insertbtn1">CANCLE</button>    
+                                </Link>    
                             </div>
                         </form>
                     </div>
                     
                 </div>
-                <Footer/>
+               
             </div>
                 
             

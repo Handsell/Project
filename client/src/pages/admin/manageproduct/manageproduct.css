@@ -8,7 +8,9 @@
 .container_manage {
     /* margin-top: 10px; */
     /* background-color: rgb(169, 238, 232); */
-    /* overflow: hidden; */
+    overflow: hidden;
+    
+
 }
 .con_manage{
     
@@ -47,3 +49,4 @@ button[class="manage_delete"] {
 button[class="manage_update"] {
     width: 100px;
 }
+

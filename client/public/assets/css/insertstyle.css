@@ -3,200 +3,58 @@
     margin: 0;
     box-sizing: inherit;
 } */
-.top{
-    position:fixed;
-    width: 100%;
-}
-#header{
-    height: 60px;
-    background-color: #000;
-    display: flex !important;
-    justify-content: space-between !important;
-    box-sizing: border-box ;
-}
 
-#header__nav {
-    display: inline-block;
-    font-size: 16px;
-  
-}
-
-#header__nav li {
-    display: inline-block;
+.container_insert {
     
-}
-
-#header__nav .ti-menu {
-    font-size: 16px;
-}
-
-#header .search-button{
-    float: right;
-    padding:0 21px;
-    cursor: pointer;
-}
-
-
-#header .user-button{
-    float: right;
-    padding:0 21px;
-    cursor: pointer;
-}
-
-#header .fas{
-    font-size: 16px;
-    color: #fff;
-    line-height: 60px;
-}
-
-#header .shopping-button{
-    float: right;
-    padding:0 21px;
-    cursor: pointer;
-    position: relative;
-}
-
-#header__nav li a{
-    color: #fff;
-    text-decoration: none;
-    line-height:60px;
-    padding: 0 40px;
-    display: inline-block;
-}
-
-#header .button__icon--small{
-    background-color: #000;
-    height: 60px;
-    float: right;
-    padding-right: 30px;
-}
-.container {
-    display: grid;
-    grid-template-rows: 1fr .5fr;
     width: 800px;
+    height: 100vh;
     margin: auto;
 }
-.container-insert{
+.con-insert{
     margin-top: 60px;
     width: 800px;
     padding-top: 20px;
 }
-.container-insert .form-name{
+.con-insert.form-name{
     font-size:20px;
 }
-.input-group{
-    margin-top: 10px;
-}
-.input-group input {
-    overflow: visible;
-    width: 800px;
-    height: 46px;
-    font-size: 18px;
-}
-
-.button-create{
-    position: relative;
-    left: 458px;
-}
-.btn{
-    /* margin-top: 20px;
-    margin-right: 10px;
-    background-color: rgb(125, 186, 243);
-    justify-content: end;
-     */
-     display: inline-block;
-    color: #252537;
-  
-    width: 164px;
-    height: 36px;
-  
-    padding: 0 20px;
-    background: #B8F2E6;
-    border-radius: 5px;
-    
-    outline: none;
+button[class="insertbtn"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 20px;
     border: none;
-  
     cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-    
-    margin: 7% auto;
-    letter-spacing: 0.05em;
-}
-button:hover {
-    transform: translatey(3px);
-    box-shadow: none;
-}
-button {
-    font-size:18px;
-    
-}
-
-#footer{
+    width: 16%;
+    opacity: 0.9;
+    border-radius:15px;
+   
+    box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+  }
+  button[class="insertbtn1"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0 0 5px;
+    border: none;
+    cursor: pointer;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: #000;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-
-}
-
-.footer__logo{
-    margin: auto;
+    opacity: 0.9;
+    border-radius:15px;
+ 
+    box-shadow:4px 4px 10px rgba(0,0,0,0.2);
     
-}
+  }
+ button:hover {
+    opacity:0.8;
+    
+  }
 
-.footer__logo-des{
-    color: #fff;
-    height: 100px;
-    font-size: 16px;
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.footer__about{
-    color: #fff;  
-    font-size: 13px;
-    margin-bottom: 10px;  
-}
-.contact__title h4{
-    font-weight: 100px;
-}
 
-.about__title {
-    margin: 10px 0;
-    font-size: 16px; 
-       
-}
 
-.list__inf{
-    font-size: 17px;
-
-}
-.list__inf li a{
-    color: #fff;
-    text-decoration: none;
-}
-.footer__contact{
-    color: #fff; 
-    font-size: 16px;
-    margin: 10px 30px;
-}
-
-.contact__title{
-    margin-bottom: 10px;
-}
-
-.contact__list a{
-    color: #fff;
-    text-decoration: none;
+.cancleprudct{
     display: flex;
-    font-size: 15px;
-    margin-bottom: 5px;
-    
+    flex-direction: row;
+    width: 800px;
+    justify-content: end;
 }

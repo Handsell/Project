@@ -5,8 +5,8 @@ import {Routes, Route} from "react-router-dom";
 
 import Register from "../component/register/register";
 import LoginPage from "../pages/admin/Login";
-import PersonList from "../pages/admin/manageproduct/ManageProduct";
 import InsertProduct from "../pages/admin/InsertProduct";
+import ManageProduct from "../pages/admin/manageproduct/ManageProduct";
 
 
 function Router()
@@ -19,7 +19,7 @@ function Router()
       
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/Register" element={<Register/>}/>
-        <Route path="/ManageProduct" element={<PersonList/>}/>
+        <Route path="/ManageProduct" element={<ManageProduct/>}/>
         <Route path="/InsertProduct" element={<InsertProduct/>}/>
     </Routes>
     )
