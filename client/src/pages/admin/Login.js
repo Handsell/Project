@@ -17,13 +17,16 @@ class LoginPage extends React.Component {
         this.state = {
             username: '',
             password: '',
-            submitted: false
+            isShowPassword: false,
+            submitted: false,
+            Islogin: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    
     handleChange(e) {
         const { name, value } = e.target;
         this.setState({ [name]: value });
@@ -35,19 +38,32 @@ class LoginPage extends React.Component {
         e.preventDefault();
         
         this.setState({ submitted: true });
+        this.setState({ Islogin: true });
         const { username, password } = this.state;
         if (username && password) {
             axios.post('https://fashionwebab.herokuapp.com/login', { username, password })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+                
+                localStorage.setItem('token',res.data.accessToken);
+                alert('đăng nhập thành công');
                 window.location.href = "/ManageProduct";
       })
-        }
+            console.log(localStorage.getItem('token'));
+        }           
+        // console.log(username, password);  
         
-        console.log(username, password);
     }
 
+    
+   
+
+    handleShowHidePassword =() =>{
+        this.setState({
+            isShowPassword: !this.state.isShowPassword
+        })
+    }
     render() {
         const { loggingIn } = this.props;
         const { username, password, submitted } = this.state;
@@ -71,10 +87,20 @@ class LoginPage extends React.Component {
      							<input type="text" className="form-control" placeholder="@UserName" name="username" value={username} onChange={this.handleChange} required autofocus/>
                                 
                             </div>
+                          
                             <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
                                 <i className="fa fa-key"></i>
-                                <label htmlFor="password">Password</label>
-                                <input type="password" className="form-control" placeholder="Password" name="password" value={password} onChange={this.handleChange} required autofocus />
+                                <label htmlFor="text">Password</label>
+                                <input type={this.state.isShowPassword ? 'text' : 'password'} 
+                                className="form-control" 
+                                placeholder="Password" 
+                                name="password" 
+                                value={password} 
+                                onChange={this.handleChange} 
+                                required autofocus />                               
+                                <span onClick={() =>this.handleShowHidePassword()}>
+                                <i class={this.state.isShowPassword ? 'far fa-eye' : 'far fa-eye-slash'} ></i>
+                                </span>
                                 
                             </div>
                             <div className="form-group orther">

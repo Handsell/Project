@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import TopProduct from './topprodcut';
 import './manageproduct.css';
+import Modal from 'react-modal';
 
 
 
@@ -10,9 +11,9 @@ export default class ManageProduct extends React.Component {
   state = {
     slug: '',
     persons: [],
+   
   }
-
-
+  
   componentDidMount() {
     axios
       .get("https://fashionwebab.herokuapp.com/T_shirt")
@@ -34,13 +35,12 @@ export default class ManageProduct extends React.Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        
         window.location.reload();
       })
     
-    
   }
-
-
+  
 
   render() {
     return (
@@ -52,6 +52,7 @@ export default class ManageProduct extends React.Component {
                     <a id="Add" href="/InsertProduct"><i class="fas fa-plus"></i></a>
                     <form onSubmit={this.handleSubmit}>
                     <table className="table table-dark table-striped">
+                   
                       <thead>
                               <tr>
                                   <th scope="col">#</th>
@@ -65,22 +66,25 @@ export default class ManageProduct extends React.Component {
                     {this.state.persons.map((post) => (                           
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{post._id}</th>
                                 <td>{post.Name}</td>
                                
                                
                                 <td>{post.slug}</td>
                                 <td>{post.Price}</td>
                                 <td>
-                                     <button className="manage_delete" type="submit">Delete</button>
-                                          
-                                    <button className="manage_update">UPDATE</button>
+                                    <button className="manage_delete" type="submit">Delete</button>
+                                    <Link to="/UpdateProduct">      
+                                    <button className="manage_update"
+                                            
+                                    >UPDATE</button>
+                                    </Link>
                                 </td>
                             </tr>
                         </tbody>
                     
                     ))}
-                    
+                     
                     </table>
                     </form>
                 </div>
@@ -94,120 +98,4 @@ export default class ManageProduct extends React.Component {
   
 
 
-           // <label>
-          //  Person ID:
-          //  <input type="text" name="" onChange={this.handleChange} />
-         // </label>
-        //  <button type="submit">Delete</button>
-      //  </form>
-    //  </div> 
-  //  )
- // }
- //}
-
-
-
-// export default function ManageAdmin() {
-//     return (
-//     <>
-//         <div id="main">
-//             <Top/>     
-//             <div className="container_manage">
-//                 <div className="con_manage">
-//                     <h2>MANAGE PRODUCTS</h2>
-//                     <a id="Add" href="/InsertProduct"><i class="fas fa-plus"></i></a>
-//                     <table className="table table-dark table-striped">
-//                         <thead>
-//                             <tr>
-//                                 <th scope="col">#</th>
-//                                 <th scope="col">NAME</th>
-//                                 <th scope="col">MÃ SỐ</th>
-//                                 <th scope="col">PRICE</th>
-//                                 <th scope="col">IMG</th>
-//                                 <th scope="col">DESCRIPTIONS</th>
-//                                 <th scope="col">ACTIONS</th>                                
-//                             </tr>
-//                         </thead>
-//                         <tbody>
-//                             <tr>
-//                                 <th scope="row">1</th>
-//                                 <td>Mark</td>
-//                                 <td>Otto</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>
-//                                     <a href="" className="btn btn-secondary">DELETE</a>
-//                                     <a href="" className="btn btn-secondary">UPDATE</a>
-//                                 </td>
-//                             </tr>
-//                             <tr>
-//                                 <th scope="row">2</th>
-//                                 <td>Jacob</td>
-//                                 <td>Thornton</td>
-//                                 <td>@fat</td>
-//                                 <td>@fat</td>
-//                                 <td>@fat</td>
-//                                 <td>
-//                                     <a href="" className="btn btn-secondary">DELETE</a>
-//                                     <a href="" className="btn btn-secondary">UPDATE</a>
-//                                 </td>
-//                             </tr>
-//                             <tr>
-//                                 <th scope="row">3</th>
-//                                 <td>Jacob</td>
-//                                 <td>Thornton</td>
-//                                 <td>@fat</td>
-//                                 <td>@fat</td>
-//                                 <td>@fat</td>
-//                                 <td>
-//                                     <a href="" className="btn btn-secondary">DELETE</a>
-//                                     <a href="" className="btn btn-secondary">UPDATE</a>
-//                                 </td>
-//                             </tr>
-//                             <tr>
-//                                 <th scope="row">4</th>
-//                                 <td>Mark</td>
-//                                 <td>Otto</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>
-//                                     <a href="" className="btn btn-secondary">DELETE</a>
-//                                     <a href="" className="btn btn-secondary">UPDATE</a>
-//                                 </td>
-//                             </tr>
-//                             <tr>
-//                                 <th scope="row">5</th>
-//                                 <td>Mark</td>
-//                                 <td>Otto</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>
-//                                     <a href="" className="btn btn-secondary">DELETE</a>
-//                                     <a href="" className="btn btn-secondary">UPDATE</a>
-//                                 </td>
-//                             </tr>
-//                             <tr>
-//                                 <th scope="row">6</th>
-//                                 <td>Mark</td>
-//                                 <td>Otto</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>@mdo</td>
-//                                 <td>
-//                                     <a href="" className="btn btn-secondary">DELETE</a>
-//                                     <a href="" className="btn btn-secondary">UPDATE</a>
-//                                 </td>
-//                             </tr>                          
-//                         </tbody>
-//                     </table>
-//                 </div>
-//             </div>
-//         </div>
-//         {/* <!--Begin: Footer--> */}
-//         <Footer/>
-//     </>
-//     )
-// }
+ 

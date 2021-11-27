@@ -1,7 +1,14 @@
 import React from "react"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export default function TopProduct(){
+   const navigate = useNavigate();
+    const logout = () =>{
+        localStorage.removeItem("token");
+        navigate("/Login");
+    }
+       
     return(
         <div className="top">
                 <div id="header">
@@ -18,8 +25,8 @@ export default function TopProduct(){
                         </div>
                                    
                         
-                        <div className="user-button js-login">
-                            <Link to="/Login"><i className="fas fa-user"></i></Link>
+                        <div className="user-button js-login" >
+                            <button onClick={logout}>loout</button>
                         </div>
 
                         <div className="search">
