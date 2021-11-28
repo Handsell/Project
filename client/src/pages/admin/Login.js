@@ -47,7 +47,7 @@ class LoginPage extends React.Component {
                 console.log(res.data);
                 
                 localStorage.setItem('token',res.data.accessToken);
-                alert('đăng nhập thành công');
+                alert('Login success');
                 window.location.href = "/ManageProduct";
       })
             console.log(localStorage.getItem('token'));

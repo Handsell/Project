@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import TopProduct from "./manageproduct/topprodcut";
+import './Update.css'
 
 
 import axios from 'axios';
@@ -21,16 +23,10 @@ const initialPost = {
 
 const Update = () => {
  
-  const navigation = useNavigate();
-  const [loading, setLoading] = useState(false);
 
-  const [notify, setNotify] = useState({
-    isOpen: false,
-    message: "",
-    type: "",
-  });
+  
 
-  const getOnePost = async(id) =>{
+  const getOnePost = async() =>{
     try{
       return await axios.get(`https://fashionwebab.herokuapp.com/T_shirt/${id}`);
     }
@@ -40,6 +36,8 @@ const Update = () => {
 }
 
   const { id } = useParams();
+
+  console.log(id);
 
   const [post, setPost] = useState(initialPost);
   console.log(post);
@@ -53,21 +51,13 @@ const Update = () => {
   }, [id]);
 
   const updatePost = (id, params) =>{
-    return axios.put(`https://fashionwebab.herokuapp.com/T_shirt/${id}`, {params})
+    return axios.put(`https://fashionwebab.herokuapp.com/T_shirt/${id}`, params)
 }
 
   const updateBlogPost = async () => {
-    setLoading(true);
-    setNotify({
-      isOpen: true,
-      message: "Create Successfully",
-      type: "success",
-    });
+   
     await updatePost(id, post);
-    setLoading(false);
-    setTimeout(() => {
-      navigation("/Login");
-    });
+  
   };
 
 
@@ -77,13 +67,18 @@ const Update = () => {
 
   return (
 
-    <div className="container">
-        <h2>Add an item</h2>
-        <form notify={notify} setNotify={setNotify}>           
-        <table>
-            
+    <div className="container-update">
+        <TopProduct/>
+        
+        <div className="form-update">  
+       
+                 
+      <h2>Edit Product</h2>  
+        <table className="table-update">  
+        
             <tbody>
-                <tr className="content">
+              
+                <tr className="content-update">
                     <th><label>Name</label></th>
                     <td>
                         <input
@@ -94,7 +89,7 @@ const Update = () => {
                         />
                     </td>
                 </tr>
-                <tr className="content">
+                <tr className="content-update">
                     <th><label>Slug</label></th>
                     <td>
                         <input
@@ -105,7 +100,7 @@ const Update = () => {
                         />
                     </td>
                 </tr>
-                <tr className="content">
+                <tr className="content-update">
                     <th><label>Price</label></th>
                     <td>
                         <input
@@ -116,7 +111,7 @@ const Update = () => {
                         />
                     </td>
                 </tr>
-                <tr className="content">
+                <tr className="content-update">
                     <th><label>Link Image</label></th>
                     <td>
                         <input
@@ -127,20 +122,16 @@ const Update = () => {
                         />
                     </td>
                 </tr>
-            </tbody>
-            <button
-                onClick={() => updateBlogPost()}
-                xs={{ marginTop: "10px" }}
-                variant="contained"
-                color="primary"
-                //   endIcon={
-                //     loading && <ReactBootStrap.Spinner animation="border" size="sm" />
-                //   }
-                >
+           
+            <p onClick={updateBlogPost}
+               variant="contained"
+               color="primary"
+            >
                 Update
-            </button>
-        </table>
-          </form>
+            </p>
+            </tbody>
+        </table>  
+        </div>     
     </div>
      );
 }

@@ -26,7 +26,7 @@ export default function TopProduct(){
                                    
                         
                         <div className="user-button js-login" >
-                            <button onClick={logout}>loout</button>
+                            <button onClick={logout}>Logout</button>
                         </div>
 
                         <div className="search">

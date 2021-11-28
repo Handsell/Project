@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import TopProduct from './topprodcut';
 import './manageproduct.css';
 import Modal from 'react-modal';
@@ -8,7 +8,11 @@ import Modal from 'react-modal';
 
 
 export default class ManageProduct extends React.Component {
+
+ 
+
   state = {
+    _id: '',
     persons: []
    
   }
@@ -26,20 +30,17 @@ export default class ManageProduct extends React.Component {
       .catch((error) => console.log(error));
   }
 
-  
 
-  handleSubmit = event => {
-    event.preventDefault();
-
-    axios.delete(`https://fashionwebab.herokuapp.com/T_shirt/${this.state._id}`)
+ 
+  handleDelete = (id) => {
+    axios.delete(`https://fashionwebab.herokuapp.com/T_shirt/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
         
         window.location.reload();
       })
-    
-  }
+  };
   
 
   render() {
@@ -50,7 +51,7 @@ export default class ManageProduct extends React.Component {
                 <div className="con_manage">
                     <h2>MANAGE PRODUCTS</h2>
                     <a id="Add" href="/InsertProduct"><i class="fas fa-plus"></i></a>
-                    <form onSubmit={this.handleSubmit}>
+                    <form >
                     <table className="table table-dark table-striped">
                    
                       <thead>
@@ -76,7 +77,7 @@ export default class ManageProduct extends React.Component {
                                 <td>
                                     <button className="manage_delete" 
                                     type="submit"
-                                  
+                                    onClick={()=>this.handleDelete(post._id)}
                                     >Delete</button>
 
                                     <Link to={`/UpdateProduct/${post._id}`}>      
