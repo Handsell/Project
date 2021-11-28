@@ -9,8 +9,7 @@ import Modal from 'react-modal';
 
 export default class ManageProduct extends React.Component {
   state = {
-    slug: '',
-    persons: [],
+    persons: []
    
   }
   
@@ -19,19 +18,20 @@ export default class ManageProduct extends React.Component {
       .get("https://fashionwebab.herokuapp.com/T_shirt")
       .then((res) => {
         const persons = res.data;
+        
         this.setState({ persons });
+        console.log(persons);
+        
       })
       .catch((error) => console.log(error));
   }
 
-  handleChange = event => {
-    this.setState({ slug: event.target.value });
-  }
+  
 
   handleSubmit = event => {
     event.preventDefault();
 
-    axios.delete(`https://fashionwebab.herokuapp.com/T_shirt/create/${this.state.slug}`)
+    axios.delete(`https://fashionwebab.herokuapp.com/T_shirt/${this.state._id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -55,26 +55,31 @@ export default class ManageProduct extends React.Component {
                    
                       <thead>
                               <tr>
-                                  <th scope="col">#</th>
+                                  
                                   <th scope="col">Name</th>
                                   <th scope="col">Slug</th>
-                                  <th scope="col">PRICE</th>                                                            
+                                  <th scope="col">PRICE</th>  
+                                  <th scope="col">Link Img</th>                                                          
                                   <th scope="col">ACTIONS</th>                                
                               </tr>
                           </thead>
                     
                     {this.state.persons.map((post) => (                           
                         <tbody>
-                            <tr>
-                                <th scope="row">{post._id}</th>
-                                <td>{post.Name}</td>
-                               
+                            <tr key={post._id}>
+                                <th scope="row">{post.Name}</th>
+                                
                                
                                 <td>{post.slug}</td>
                                 <td>{post.Price}</td>
+                                <td>{post.img} </td>
                                 <td>
-                                    <button className="manage_delete" type="submit">Delete</button>
-                                    <Link to="/UpdateProduct">      
+                                    <button className="manage_delete" 
+                                    type="submit"
+                                  
+                                    >Delete</button>
+
+                                    <Link to={`/UpdateProduct/${post._id}`}>      
                                     <button className="manage_update"
                                             
                                     >UPDATE</button>

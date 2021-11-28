@@ -6,8 +6,9 @@ import Register from "../component/register/register";
 import LoginPage from "../pages/admin/Login";
 import InsertProduct from "../pages/admin/InsertProduct";
 import ManageProduct from "../pages/admin/manageproduct/ManageProduct";
-import UpdateProduct from "../pages/admin/Updateproduct";
+// import UpdateProduct from "../pages/admin/Updateproduct";
 import PrivateRoute from "./admin";
+import Update from '../pages/admin/Updateproduct';
 
 
 function RouterAdmin()
@@ -23,14 +24,14 @@ function RouterAdmin()
           </PrivateRoute>
         }
       />
-      <Route
+      {/* <Route
         path="/ManageProduct"
         element={
           <PrivateRoute>
             <ManageProduct />
           </PrivateRoute>
         }
-      />
+      /> */}
       <Route
         path="/InsertProduct"
         element={
@@ -42,7 +43,7 @@ function RouterAdmin()
         
 
         <Route path="/Decription" element={<Detail />}/>
-        <Route path="/UpdateProduct" element={<UpdateProduct />}/>       
+        <Route path="/UpdateProduct/:id" element={<Update />}/>       
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/Register" element={<Register/>}/>
         

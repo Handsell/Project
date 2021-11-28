@@ -1,131 +1,149 @@
-// import React, { useState, useEffect } from 'react';
-// import { Box, makeStyles, TextareaAutosize, Button, FormControl, InputBase } from '@material-ui/core';
-// import { AddCircle as Add } from '@material-ui/icons';
-// import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// // import { updatePost, uploadFile, getPost } from '../../service/api';
 
-// axios.put(`https://fashionwebab.herokuapp.com/T_shirt/:id`)
-//       .then(res => {
-//         console.log(res);
-//         console.log(res.data);
-        
-//         window.location.reload();
-//       })
+import axios from 'axios';
 
-// const useStyle = makeStyles(theme => ({
-//     container: {
-//         margin: '50px 100px',
-//         [theme.breakpoints.down('md')]: {
-//             margin: 0
-//         },
-//     },
-//     image: {
-//         width: '100%',
-//         height: '50vh',
-//         objectFit: 'cover'
-//     },
-//     title: {
-//         marginTop: 10,
-//         display: 'flex',
-//         flexDirection: 'row'
-//     },
-//     textfield: {
-//         flex: 1,
-//         margin: '0 30px',
-//         fontSize: 25
-//     },
-//     textarea: {
-//         width: '100%',
-//         border: 'none',
-//         marginTop: 50,
-//         fontSize: 18,
-//         '&:focus-visible': {
-//             outline: 'none'
-//         }
-//     }
-// }));
 
-// const initialPost = {
-//     title: '',
-//     description: '',
-//     picture: '',
-//     username: 'codeforinterview',
-//     categories: 'Tech',
-//     createdDate: new Date()
-// }
+const initialPost = {
+  Name: "",
+  slug: "",
+  Price: "",
+  img: "",
+  username: "admin",
+};
 
-// const Update = ({ match }) => {
-//     const classes = useStyle();
-//     const history = useNavigate();
 
-//     const [post, setPost] = useState(initialPost);
-//     const [file, setFile] = useState('');
-//     const [imageURL, setImageURL] = useState('');
 
-//     const url = 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
-    
-//     useEffect(() => {
-//         const fetchData = async () => {
-//             let data = await getPost(match.params.id);
-//             setPost(data);
-//         }
-//         fetchData();
-//     }, []);
 
-//     useEffect(() => {
-//         const getImage = async () => { 
-//             if(file) {
-//                 const data = new FormData();
-//                 data.append("name", file.name);
-//                 data.append("file", file);
-                
-//                 const image = await uploadFile(data);
-//                 post.picture = image.data;
-//                 setImageURL(image.data);
-//             }
-//         }
-//         getImage();
-//     }, [file])
 
-//     const updateBlogPost = async () => {
-//         await updatePost(match.params.id, post);
-//         history(`/details/${match.params.id}`);
-//     }
 
-//     const handleChange = (e) => {
-//         setPost({ ...post, [e.target.name]: e.target.value });
-//     }
+const Update = () => {
+ 
+  const navigation = useNavigate();
+  const [loading, setLoading] = useState(false);
 
-//     return (
-//         <Box className={classes.container}>
-//             <img src={post.picture || url} alt="post" className={classes.image} />
+  const [notify, setNotify] = useState({
+    isOpen: false,
+    message: "",
+    type: "",
+  });
 
-//             <FormControl className={classes.title}>
-//                 <label htmlFor="fileInput">
-//                     <Add className={classes.addIcon} fontSize="large" color="action" />
-//                 </label>
-//                 <input
-//                     type="file"
-//                     id="fileInput"
-//                     style={{ display: "none" }}
-//                     onChange={(e) => setFile(e.target.files[0])}
-//                 />
-//                 <InputBase onChange={(e) => handleChange(e)} value={post.title} name='title' placeholder="Title" className={classes.textfield} />
-//                 <Button onClick={() => updateBlogPost()} variant="contained" color="primary">Update</Button>
-//             </FormControl>
+  const getOnePost = async(id) =>{
+    try{
+      return await axios.get(`https://fashionwebab.herokuapp.com/T_shirt/${id}`);
+    }
+    catch (error){
+        console.log(error);
+    }
+}
 
-//             <TextareaAutosize
-//                 rowsMin={5}
-//                 placeholder="Tell your story..."
-//                 className={classes.textarea}
-//                 name='description'
-//                 onChange={(e) => handleChange(e)} 
-//                 value={post.description}
-//             />
-//         </Box>
-//     )
-// }
+  const { id } = useParams();
 
-// export default Update;
+  const [post, setPost] = useState(initialPost);
+  console.log(post);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let data = await getOnePost(id);
+      setPost(data.data);
+    };
+    fetchData();
+  }, [id]);
+
+  const updatePost = (id, params) =>{
+    return axios.put(`https://fashionwebab.herokuapp.com/T_shirt/${id}`, {params})
+}
+
+  const updateBlogPost = async () => {
+    setLoading(true);
+    setNotify({
+      isOpen: true,
+      message: "Create Successfully",
+      type: "success",
+    });
+    await updatePost(id, post);
+    setLoading(false);
+    setTimeout(() => {
+      navigation("/Login");
+    });
+  };
+
+
+  const handleChange = (e) => {
+    setPost({ ...post, [e.target.name]: e.target.value });
+  };
+
+  return (
+
+    <div className="container">
+        <h2>Add an item</h2>
+        <form notify={notify} setNotify={setNotify}>           
+        <table>
+            
+            <tbody>
+                <tr className="content">
+                    <th><label>Name</label></th>
+                    <td>
+                        <input
+                        value={post.Name}
+                        name="Name"
+                        className="textfield"
+                        onChange={(e) => handleChange(e)}
+                        />
+                    </td>
+                </tr>
+                <tr className="content">
+                    <th><label>Slug</label></th>
+                    <td>
+                        <input
+                        value={post.slug}
+                        name="slug"
+                        className="textfield"
+                        onChange={(e) => handleChange(e)}
+                        />
+                    </td>
+                </tr>
+                <tr className="content">
+                    <th><label>Price</label></th>
+                    <td>
+                        <input
+                        value={post.Price}
+                        name="Price"
+                        className="textfield"
+                        onChange={(e) => handleChange(e)}
+                        />
+                    </td>
+                </tr>
+                <tr className="content">
+                    <th><label>Link Image</label></th>
+                    <td>
+                        <input
+                        value={post.img}
+                        name="img"
+                        className="textfield"
+                        onChange={(e) => handleChange(e)}
+                        />
+                    </td>
+                </tr>
+            </tbody>
+            <button
+                onClick={() => updateBlogPost()}
+                xs={{ marginTop: "10px" }}
+                variant="contained"
+                color="primary"
+                //   endIcon={
+                //     loading && <ReactBootStrap.Spinner animation="border" size="sm" />
+                //   }
+                >
+                Update
+            </button>
+        </table>
+          </form>
+    </div>
+     );
+}
+
+
+export default Update;

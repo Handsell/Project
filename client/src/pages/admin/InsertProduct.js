@@ -48,7 +48,7 @@ class InsertProductPage extends React.Component {
 
 
     render() {
-        const { loggingIn } = this.props;
+        // const { loggingIn } = this.props;
         const { Name, slug, Price, img, submitted } = this.state;
         return (
             

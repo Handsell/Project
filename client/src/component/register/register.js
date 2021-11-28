@@ -38,6 +38,8 @@ class RegisterPage extends React.Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+                alert('Account successfully created');
+                window.location.reload();
                 
             })
     }
