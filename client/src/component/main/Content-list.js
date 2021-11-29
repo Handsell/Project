@@ -1,82 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
-import axios from "axios";
 
-
-// ------------------------GET Requests------------------------------------
-export default class PersonList extends React.Component {
-  state = {
-    persons: [],
-  };
-
-  componentDidMount() {
-    axios
-      .get("https://fashionwebab.herokuapp.com/T_shirt")
-      .then((res) => {
-        const persons = res.data;
-        this.setState({ persons });
-      })
-      .catch((error) => console.log(error));
+const Posts =({ posts, loading }) => {
+  if(loading) {
+    return <h2>Loading....</h2>;
   }
-  render() {
-    return (
-      <>
-        <div className="content__list">
-          {this.state.persons.map((post) => (
-            // <div style={{display:'grid', gridTemplateRows:'1fr 1fr',width:'100%'}}>
-            <div className="content__Tshirt">
-              <a href="/Decription">
-                {/* <img src="Img/t-shirt/Áo Thun Cổ Tròn Linh Vật Bbuff Ver1 .jpg" alt="Áo Thun Cổ Tròn Linh Vật Bbuff Ver1" /> */}
-                {/* <div key={post.id}> */}
-                  <img src={post.img}></img>
-                  {/* <p>{post.type}</p> */}
-                  
-                {/* </div> */}
-              </a>
-            </div>
 
-            // </div>
-          ))}
-        </div>
-      </>
-    );
-  }
-}
+  return (
+      <div className="content__list">
+        {posts.map( posts => (
+          <div className="content__Tshirt">
+            <Link to={`/Decription/${posts._id}`}>             
+                <img src={posts.img}></img>           
+            </Link>
+          
+          </div>
+        ))}
+      </div> 
+  )
+};
 
-// export default class PersonList extends React.Component {
-//   state = {
-//     name: '',
-//   }
+export default Posts;
 
-//   handleChange = event => {
-//     this.setState({ name: event.target.value });
-//   }
-
-//   handleSubmit = event => {
-//     event.preventDefault();
-
-//     const user = {
-//       name: this.state.name
-//     };
-
-//     axios.post(`https://ass4singment.herokuapp.com/products`, { products })
-//       .then(res => {
-//         console.log(res);
-//         console.log(res.data);
-//       })
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <form onSubmit={this.handleSubmit}>
-//           <label>
-//             Person Name:
-//             <input type="text" name="name" onChange={this.handleChange} />
-//           </label>
-//           <button type="submit">Add</button>
-//         </form>
-//       </div>
-//     )
-//   }
-// }

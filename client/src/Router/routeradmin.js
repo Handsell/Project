@@ -1,14 +1,12 @@
 import Detail from "../pages/customer/decription";
-
-
 import {Routes, Route } from "react-router-dom";
 import Register from "../component/register/register";
 import LoginPage from "../pages/admin/Login";
+import Decription2 from "../pages/customer/decription";
 import InsertProduct from "../pages/admin/InsertProduct";
-import ManageProduct from "../pages/admin/manageproduct/ManageProduct";
-// import UpdateProduct from "../pages/admin/Updateproduct";
 import PrivateRoute from "./admin";
 import Update from '../pages/admin/Updateproduct';
+import Mana from "../pages/mana";
 
 
 function RouterAdmin()
@@ -20,18 +18,18 @@ function RouterAdmin()
         path="/ManageProduct"
         element={
           <PrivateRoute>
-            <ManageProduct />
+            <Mana />
           </PrivateRoute>
         }
       />
-      {/* <Route
-        path="/ManageProduct"
+      <Route
+        path="/UpdateProduct"
         element={
           <PrivateRoute>
-            <ManageProduct />
+            <Update/>
           </PrivateRoute>
         }
-      /> */}
+      />
       <Route
         path="/InsertProduct"
         element={
@@ -39,13 +37,14 @@ function RouterAdmin()
             <InsertProduct />
           </PrivateRoute>
         }
-      />
+      /> 
         
 
         <Route path="/Decription" element={<Detail />}/>
         <Route path="/UpdateProduct/:id" element={<Update />}/>       
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/Register" element={<Register/>}/>
+        <Route path="/Decription/:id" element={<Decription2 />}/> 
         
        
     </Routes>

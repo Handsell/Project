@@ -1,5 +1,6 @@
 .container-update{
    height: 100vh;
+   background-color: rgb(241, 240, 241);
     
 }
 
@@ -21,7 +22,10 @@
     bottom: 0;
     
 }
-
+ table{
+    border-collapse:none;
+   
+ }
 
 input[class="textfield"]
 {
@@ -45,3 +49,55 @@ th{
 td{
     border: none;
 }
+
+.class-button{
+    display: flex;
+    position: relative;
+    left: 371%;
+    top: 10px;
+    color:white
+}
+
+.update-button{
+    width: 100px;
+    height: 41px;
+    padding: 8px 23px;
+    background-color: turquoise;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 2px;
+}
+
+.update-button:hover {
+    opacity:0.8;
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+   
+    
+  }
+
+  .link-cancel:hover {
+    opacity:0.8;
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+   
+    
+  }
+
+  .link-cancel{
+    width: 100px;
+    height: 41px;
+    padding: 8px 23px;
+    background-color: turquoise;
+    cursor: pointer;
+   
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .link-cancel Link{
+      color: white;
+  }

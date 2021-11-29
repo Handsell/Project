@@ -8,8 +8,10 @@
 .container_signup{
    height: 100vh;
    font-family: 'Noto Sans JP', sans-serif;
-   background-image: linear-gradient(-225deg, #d2fff1 0%, #facbf1 100%);
+   background-image: linear-gradient(-225deg, #c3ffec 30%, #faa5e9 100%);
    background-repeat: no-repeat;
+   font-family: 'Roboto';
+
  }
  .form_signup{
     width: 450px;
@@ -20,6 +22,7 @@
     box-shadow: 0 9px 50px hsl(0deg 0% 0% / 31%);
     border-radius: 2%;
     padding: 1% 2% 2% 2%;
+    background-image: linear-gradient(-225deg, #d2fff1 50%, #facbf1 50%);
  }
 .head-form-signup{
   margin-top: 48px;
@@ -100,7 +103,10 @@ button:hover {
  
 .regist_signup{
   margin: 10px 0 0 180px;
-  font-size: 13px;
+  font-size: 15px;
+  color: #424f5c;
+  width: 220px;
+    margin: 10px 0 0 173px;
 } 
 
 

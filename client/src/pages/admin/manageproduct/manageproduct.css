@@ -42,11 +42,35 @@
     color: aquamarine;
 }
 
-button[class="manage_delete"] {
-    width: 100px;
-    margin-right: 4px;
+.button_u_d{
+    display: flex;
 }
-button[class="manage_update"] {
-    width: 100px;
+
+.manage_delete{
+    width: 80px;
+    height: 40px;
+    margin-right: 2px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    padding: 2px 17px;
+    background-color: #20c997;
+}
+.manage_update{
+    width: 80px;
+    height: 40px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    padding: 2px 17px;
+    background-color: #20c997;
+    color: white;
+    
+    
+}
+
+
+
+td[class='name-product']
+{
+    width: 12%;
 }
 

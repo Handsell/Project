@@ -13,7 +13,7 @@
 .Container_login   {
    
     height: 100vh;
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    background-image: linear-gradient(-225deg, #cab1ca 0%, #97d9e1 100%);
         
     background-repeat: no-repeat;
 
@@ -21,7 +21,7 @@
 /*   the main font */
     font-family: 'Abel', sans-serif;
     opacity: .95;
-    background-image: linear-gradient(to top, #cab1ca 0%, #97d9e1 100%);
+   
 }
 
 

@@ -2,23 +2,26 @@ import React from "react"
 import { Link, useNavigate } from 'react-router-dom';
 
 
+
 export default function TopProduct(){
    const navigate = useNavigate();
     const logout = () =>{
         localStorage.removeItem("token");
         navigate("/Login");
     }
-       
+
     return(
         <div className="top">
+                
                 <div id="header">
-                    {/* <!-- Begin: Nav --> */}
+         
+                 
                     <ul id="header__nav">
                         <li><Link to="/"> HOME </Link></li>
-                        <li><Link to="/Product"> PRODUCT </Link></li>
+                       
                     </ul>
-                    {/* <!-- End: Nav --> */}
-                    {/* <!-- Begin: Button --> */}
+                  
+                  
                     <div className="button__icon--small">
                         <div className="shopping-button">
                             <Link to="/ManageProduct"><i className="fas fa-cart-arrow-down"></i></Link>
@@ -26,7 +29,7 @@ export default function TopProduct(){
                                    
                         
                         <div className="user-button js-login" >
-                            <button onClick={logout}>Logout</button>
+                            <button onClick={logout}>LogOut</button>
                         </div>
 
                         <div className="search">
@@ -38,9 +41,10 @@ export default function TopProduct(){
                             </div> 
                         </div>  
                     </div>
-                    {/* <!-- End: Button --> */}
-        
+                   
+                  
                 </div>
+                
             </div> 
     )
 }

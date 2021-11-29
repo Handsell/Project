@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 // import Login from "../../component/Login/login"
 import axios from 'axios'
 import { Link } from 'react-router-dom';
@@ -11,8 +11,7 @@ class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
-        // reset login status
-        // this.props.logout();
+     
 
         this.state = {
             username: '',
@@ -65,7 +64,7 @@ class LoginPage extends React.Component {
         })
     }
     render() {
-        const { loggingIn } = this.props;
+        
         const { username, password, submitted } = this.state;
         return (
             <div className="Container_login">                

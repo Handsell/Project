@@ -8,17 +8,17 @@ export default function Footer_About(){
             </div>
             <div className="about__list">
                 <p>
-                    YaMe là một thường hiệu thời trang Việt Nam dành cho giới trẻ.
+                    Fashion Shop là một thường hiệu thời trang Việt Nam dành cho giới trẻ.
                     <br/>                
-                    YaMe - NHÀ CỦA GU
+                    Fashion Shop - GU CỦA GIỚI TRẺ
                     <br/>
                     Streetwear của giới trẻ Việt đang phát triển không ngừng và ngày càng khó tính hơn, kiểu cách hơn...
                     <br/>
-                    Theo xu hướng, YaMe.vn đang có những bước chuyển mình đầy táo bạo...
+                    Theo xu hướng, Fashion Shop đang có những bước chuyển mình đầy táo bạo...
                     <br/>
-                    ĐA DẠNG CÁC GU THỜI TRANG chính là phong cách hiện tại của YaMe.vn
+                    ĐA DẠNG CÁC GU THỜI TRANG chính là phong cách hiện tại của Fashion Shop
                     <br/>
-                    Đến với YaMe, sẽ đáp ứng mọi nhu cầu thời trang hàng ngày cho bạn:  ĐI HỌC, ĐI CHƠI, ĐI LÀM, DU LỊCH, DẠO PHỐ, TIỆC TÙNG, THỂ THAO
+                    Đến với Fashion Shop, sẽ đáp ứng mọi nhu cầu thời trang hàng ngày cho bạn:  ĐI HỌC, ĐI CHƠI, ĐI LÀM, DU LỊCH, DẠO PHỐ, TIỆC TÙNG, THỂ THAO
                 </p>
             </div>
         </div>

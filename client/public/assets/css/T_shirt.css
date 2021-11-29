@@ -172,6 +172,10 @@ body{
 #footer__home .footer__logo{
     margin: auto;
     
+    
+}
+#footer__home img{
+    width: 228px;
 }
 
 #footer__home .footer__about{

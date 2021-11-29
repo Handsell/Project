@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import TopProduct from "./manageproduct/topprodcut";
-import './Update.css'
-
-
+import './Update.css';
 import axios from 'axios';
 
 
@@ -24,7 +22,9 @@ const initialPost = {
 const Update = () => {
  
 
-  
+    const { id } = useParams();
+
+    console.log(id);
 
   const getOnePost = async() =>{
     try{
@@ -35,9 +35,7 @@ const Update = () => {
     }
 }
 
-  const { id } = useParams();
-
-  console.log(id);
+  
 
   const [post, setPost] = useState(initialPost);
   console.log(post);
@@ -51,13 +49,14 @@ const Update = () => {
   }, [id]);
 
   const updatePost = (id, params) =>{
+    
     return axios.put(`https://fashionwebab.herokuapp.com/T_shirt/${id}`, params)
-}
+
+  }
 
   const updateBlogPost = async () => {
-   
     await updatePost(id, post);
-  
+    setTimeout(()=>{window.location.href='/ManageProduct'});
   };
 
 
@@ -123,14 +122,25 @@ const Update = () => {
                     </td>
                 </tr>
            
-            <p onClick={updateBlogPost}
+            </tbody>
+            <div className="class-button">
+              <div>
+              <p onClick={updateBlogPost}
+              className="update-button"
                variant="contained"
                color="primary"
-            >
+              >
                 Update
-            </p>
-            </tbody>
-        </table>  
+             </p>
+              </div>
+              <div className="link-cancel">
+              <Link to="/ManageProduct" style={{ textDecoration: 'none' }}>Cancel</Link>
+              </div>
+            
+           
+        </div>
+        </table>
+          
         </div>     
     </div>
      );

@@ -8,7 +8,7 @@ export default function Top(){
                     {/* <!-- Begin: Nav --> */}
                     <ul id="header__nav">
                         <li><Link to="/"> HOME </Link></li>
-                        <li><Link to="/Product"> PRODUCT </Link></li>
+                        
                     </ul>
                     {/* <!-- End: Nav --> */}
                     {/* <!-- Begin: Button --> */}
@@ -21,15 +21,7 @@ export default function Top(){
                         <div className="user-button js-login">
                             <a href="#"><i className="fas fa-user"></i></a>
                         </div>
-
-                        <div className="search">
-                            <div id="icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div className="input">
-                                <input type="text" placeholder="Seach" id="mysearch"/>
-                            </div> 
-                        </div>  
+ 
                     </div>
                     {/* <!-- End: Button --> */}
         
